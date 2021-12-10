@@ -1,7 +1,7 @@
 def gv
 
 pipeline {
-   agent { dockerfile true }
+    agent agent { dockerfile true }
     parameters {
         choice(name: 'VERSION', choices: ['1.1.0', '1.2.0', '1.3.0'], description: '')
         booleanParam(name: 'executeTests', defaultValue: true, description: '')
@@ -11,7 +11,6 @@ pipeline {
             steps {
                 script {
                    gv = load "script.groovy" 
-                   sh 'node --version' // to check for the dockerfile
                 }
             }
         }
