@@ -36,3 +36,11 @@ A playground to illustrate the use of Jenkins in CI/CD
 13. Source = (from Github repo -> Code -> SSH).
 14. Build the Repo!
   
+# To Use Docker in Jenkins:
+1. Install the following plugins:
+   - [Docker pipeline][1] 
+   - [Docker][2] 
+2. Use `agent { dockerfile true }` in the Jenkinsfile.
+
+  [1]: https://plugins.jenkins.io/docker-workflow/
+  [2]: https://plugins.jenkins.io/docker-plugin/
