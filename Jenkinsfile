@@ -1,44 +1,21 @@
-def gv
-
 pipeline {
-    agent agent { dockerfile true }
-    parameters {
-        choice(name: 'VERSION', choices: ['1.1.0', '1.2.0', '1.3.0'], description: '')
-        booleanParam(name: 'executeTests', defaultValue: true, description: '')
-    }
+    agent any
+
     stages {
-        stage("init") {
+        stage('Build') {
             steps {
-                script {
-                   gv = load "script.groovy" 
-                }
+                echo 'Building..'
             }
         }
-        stage("build") {
+        stage('Test') {
             steps {
-                script {
-                    gv.buildApp()
-                }
+                echo 'Testing..'
             }
         }
-        stage("test") {
-            when {
-                expression {
-                    params.executeTests
-                }
-            }
+        stage('Deploy') {
             steps {
-                script {
-                    gv.testApp()
-                }
+                echo 'Deploying....'
             }
         }
-        stage("deploy") {
-            steps {
-                script {
-                    gv.deployApp()
-                }
-            }
-        }
-    }   
-}
+    }
+} 
