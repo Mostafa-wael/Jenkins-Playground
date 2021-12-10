@@ -45,4 +45,4 @@ A playground to illustrate the use of Jenkins in CI/CD
   [1]: https://plugins.jenkins.io/docker-workflow/
   [2]: https://plugins.jenkins.io/docker-plugin/
 
-  <!--  -->
+  
